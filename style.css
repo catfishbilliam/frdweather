@@ -14,29 +14,22 @@ body {
   padding: 1rem;
 }
 
-.header-container {
+h1 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 2rem;
+  color: #1a74ed;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.button-row {
   display: flex;
-  align-items: center;
   justify-content: center;
   gap: 1rem;
   margin-bottom: 2rem;
 }
 
-.header-container h1 {
-  margin: 0;
-  font-family: 'Fredoka One', cursive;
-  font-size: 2rem;
-  color: #1a74ed;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-align: center;
-}
-
 .policy-toggle {
-  margin: 1rem auto 0;
-  display: block;
-  width: 140px;
   padding: 0.75rem 1rem;
   background-color: #1a74ed;
   border: none;
@@ -51,18 +44,6 @@ body {
 
 .policy-toggle:hover {
   background-color: #3195ed;
-}
-
-h1 {
-  font-family: 'Fredoka One', cursive;
-  font-size: 2rem;
-  color: #1a74ed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
 }
 
 h2 {
@@ -138,12 +119,11 @@ ul {
 }
 
 #conditions {
-  background-color: #ffffff;
+  background-color: rgba(255, 130, 16, 0.7); 
   border-left: 6px solid #326295;
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   padding: 1rem 1.25rem;
-  opacity: 0;
   transform: translateY(30px);
   text-align: center;
 }
@@ -172,7 +152,6 @@ ul {
   text-align: center;
   opacity: 0;
   transform: translateY(30px);
-  position: relative;
   cursor: pointer;
 }
 
@@ -187,21 +166,6 @@ ul {
   width: 48px;
   height: 48px;
   margin-bottom: 0.25rem;
-}
-
-.forecast-details {
-  margin-top: 0.75rem;
-  padding: 0.75rem;
-  background: #f1f5f9;
-  border-radius: 8px;
-  text-align: left;
-  font-size: 0.9rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.forecast-details ul {
-  list-style: disc inside;
-  margin: 0.5rem 0 0 1rem;
 }
 
 iframe {
