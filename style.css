@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@300;400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ffbd59;
+  color: #333;
+  font-family: 'Quicksand', sans-serif;
+  line-height: 1.5;
+  padding: 1rem;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.header-container h1 {
+  margin: 0;
+  font-family: 'Fredoka One', cursive;
+  font-size: 2rem;
+  color: #1a74ed;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.policy-toggle {
+  margin: 1rem auto 0;
+  display: block;
+  width: 140px;
+  padding: 0.75rem 1rem;
+  background-color: #1a74ed;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+  text-align: center;
+}
+
+.policy-toggle:hover {
+  background-color: #3195ed;
+}
+
+h1 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 2rem;
+  color: #1a74ed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.5rem;
+  color: #1a74ed;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.25rem;
+  text-align: center;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 4px;
+  background-color: #1a74ed;
+  border-radius: 2px;
+}
+
+h3 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #1a74ed;
+  text-align: center;
+}
+
+p, ul, li, blockquote {
+  font-family: 'Quicksand', sans-serif;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+ul {
+  list-style: disc inside;
+  padding-left: 0;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  flex: 1 1 45%;
+  min-width: 280px;
+  padding: 1.25rem;
+  opacity: 0;
+  transform: translateY(30px);
+  text-align: center;
+}
+
+.alert {
+  background-color: #fff8f2;
+  border-left: 6px solid #ff8210;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  margin-bottom: 1rem;
+  padding: 1rem 1.25rem;
+  text-align: center;
+}
+
+#conditions {
+  background-color: #ffffff;
+  border-left: 6px solid #326295;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  padding: 1rem 1.25rem;
+  opacity: 0;
+  transform: translateY(30px);
+  text-align: center;
+}
+
+#conditions ul {
+  list-style: disc inside;
+}
+
+#forecast {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.forecast-card {
+  background: #ffffff;
+  border-left: 6px solid #ff8210;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  flex: 1 1 140px;
+  min-width: 120px;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  position: relative;
+  cursor: pointer;
+}
+
+.forecast-card h3 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+
+.forecast-card img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.25rem;
+}
+
+.forecast-details {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background: #f1f5f9;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.forecast-details ul {
+  list-style: disc inside;
+  margin: 0.5rem 0 0 1rem;
+}
+
+iframe {
+  display: block;
+  margin: 1.5rem auto 0;
+  width: 85%;
+  height: 650px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.policy-box {
+  background-color: #ffffff;
+  border-left: 6px solid #326295;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem 1.25rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.policy-box[hidden] {
+  display: none;
+}
+
+.policy-box ul,
+.policy-box p,
+.policy-box h3,
+.policy-box blockquote {
+  text-align: left;
+}
+
+.policy-box ul {
+  list-style: disc inside;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .card {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0.75rem;
+  }
+  h1 {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+  h2 {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+  .forecast-card {
+    flex: 1 1 45%;
+    min-width: 100px;
+  }
+  .policy-toggle {
+    width: 140px;
+  }
+}

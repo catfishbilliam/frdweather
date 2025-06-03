@@ -1,0 +1,104 @@
+{
+    "location": "Frederick, MD",
+    "policy_name": "Indoor Practice Severe Weather Policy – FRD (Advanced)",
+    "rules": [
+      {
+        "condition": "weather_alert",
+        "type": "Tornado Warning",
+        "action": "Cancel practice immediately and notify all members"
+      },
+      {
+        "condition": "weather_alert",
+        "type": "Severe Thunderstorm Warning",
+        "action": "Cancel practice immediately; assess venue safety for hail or wind damage"
+      },
+      {
+        "condition": "weather_alert",
+        "type": "Winter Storm Warning",
+        "action": "Cancel practice due to potential road hazards"
+      },
+      {
+        "condition": "weather_alert",
+        "type": "Ice Storm Warning",
+        "action": "Cancel practice if freezing rain or ice accumulation on roads reaches unsafe levels"
+      },
+      {
+        "condition": "weather_alert",
+        "type": "Flood Warning",
+        "action": "Cancel or relocate if travel routes to venue are flooded or impassable"
+      },
+      {
+        "condition": "snow_accumulation",
+        "threshold": 2.0,
+        "units": "inches",
+        "comparison": ">=",
+        "action": "Cancel practice if snowfall ≥ 2\" within 24 hours due to poor road conditions"
+      },
+      {
+        "condition": "ice_accumulation",
+        "threshold": 0.25,
+        "units": "inches",
+        "comparison": ">=",
+        "action": "Cancel practice if ice on roads or parking lot ≥ 0.25\""
+      },
+      {
+        "condition": "rain_rate",
+        "threshold": 0.5,
+        "units": "inches_per_hour",
+        "comparison": ">=",
+        "action": "Cancel or relocate if sustained heavy rain (≥ 0.5 in/hr) causes flooding risk around venue"
+      },
+      {
+        "condition": "wind_speed",
+        "threshold": 40,
+        "units": "mph",
+        "comparison": ">=",
+        "action": "Cancel practice if sustained wind ≥ 40 mph or gusts ≥ 55 mph threaten building safety"
+      },
+      {
+        "condition": "hail_warning",
+        "type": "Severe Thunderstorm Warning",
+        "action": "Cancel practice if hail of any size is forecast or reported near venue"
+      },
+      {
+        "condition": "visibility",
+        "threshold": 0.25,
+        "units": "miles",
+        "comparison": "<=",
+        "action": "Cancel practice if visibility ≤ 0.25 miles due to heavy fog or blizzard conditions"
+      },
+      {
+        "condition": "temperature",
+        "threshold": 0,
+        "units": "F",
+        "comparison": "<=",
+        "action": "Issue travel advisory and consider canceling if ambient temperature ≤ 0 °F with wind chill"
+      },
+      {
+        "condition": "temperature",
+        "threshold": 95,
+        "units": "F",
+        "comparison": ">=",
+        "action": "Advise hydration and consider shortening practice if venue is not air-conditioned"
+      },
+      {
+        "condition": "heat_index",
+        "threshold": 100,
+        "units": "F",
+        "comparison": ">=",
+        "action": "Advise hydration, schedule extra breaks, or cancel if heat index ≥ 100 °F"
+      },
+      {
+        "condition": "air_quality_index",
+        "threshold": 100,
+        "comparison": ">=",
+        "action": "Recommend rescheduling if AQI ≥ 100 (Unhealthy for Sensitive Groups) and venue ventilation is poor"
+      },
+      {
+        "condition": "air_quality_index",
+        "threshold": 150,
+        "comparison": ">=",
+        "action": "Cancel or move practice if AQI ≥ 150 (Unhealthy) and venue ventilation is inadequate"
+      }
+    ]
+  }

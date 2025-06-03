@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FRD Weather Advisor</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="header-container">
+    <button id="togglePolicy" class="policy-toggle">Show Policy</button>
+    <h1>FRD Severe Weather Advisory</h1>
+    <button id="toggleSOP" class="policy-toggle">Show SOP</button>
+  </div>
+
+  <div id="policyText" class="policy-box policy-section" hidden>
+    <h2>📄 FRD Weather Policy</h2>
+    <p><strong>Indoor Practice Severe Weather Policy – FRD (Advanced)</strong></p>
+    <ul>
+      <li><b>Tornado Warning:</b> Cancel practice immediately and notify all members</li>
+      <li><b>Severe Thunderstorm Warning:</b> Cancel practice immediately; assess venue safety for hail or wind damage</li>
+      <li><b>Winter Storm Warning:</b> Cancel practice due to potential road hazards</li>
+      <li><b>Ice Storm Warning:</b> Cancel practice if freezing rain or ice accumulation on roads reaches unsafe levels</li>
+      <li><b>Flood Warning:</b> Cancel if travel routes to venue are flooded or impassable</li>
+      <li><b>Snow Accumulation ≥ 2&quot; in 24 hours:</b> Cancel practice due to poor road conditions</li>
+      <li><b>Ice Accumulation ≥ 0.25&quot;:</b> Cancel practice if ice on roads or parking lot ≥ 0.25&quot;</li>
+      <li><b>Rain Rate ≥ 0.5 in/hr:</b> Cancel if sustained heavy rain causes flooding risk around venue</li>
+      <li><b>Wind Speed ≥ 40 mph (gusts ≥ 55 mph):</b> Cancel practice if sustained wind threatens building safety</li>
+      <li><b>Hail Warning (Severe Thunderstorm Warning):</b> Cancel practice if hail of any size is forecast or reported near venue</li>
+      <li><b>Visibility ≤ 0.25 miles:</b> Cancel practice if visibility ≤ 0.25 miles due to heavy fog or blizzard conditions</li>
+      <li><b>Temperature ≤ 0 °F (with wind chill):</b> Issue travel advisory; consider cancellation</li>
+      <li><b>Temperature ≥ 95 °F:</b> Advise hydration and consider shortening practice if venue is not air-conditioned</li>
+      <li><b>Heat Index ≥ 100 °F:</b> Advise hydration, schedule extra breaks, or cancel if extreme heat</li>
+      <li><b>AQI ≥ 100 (Unhealthy for Sensitive Groups):</b> Recommend rescheduling if ventilation is poor</li>
+      <li><b>AQI ≥ 150 (Unhealthy):</b> Cancel or move practice if ventilation is inadequate</li>
+    </ul>
+  </div>
+
+  <div id="sopText" class="policy-box policy-section" hidden>
+    <h2>📘 Practice Cancellation SOP</h2>
+    <p><strong>Standard Operating Procedure (SOP): Practice Cancellation Due to Weather</strong></p>
+    <p><strong>Applies to:</strong> Frederick Roller Derby</p>
+    <p><strong>Practice Days:</strong> Mondays at 6:30 PM and Fridays at 7:30 PM</p>
+
+    <h3>🔍 Purpose</h3>
+    <p>To ensure the safety of skaters and volunteers by providing a consistent, timely, and responsible process for cancelling practice due to severe weather or unsafe travel conditions.</p>
+
+    <h3>📅 Schedule for Review</h3>
+    <ul>
+      <li><strong>Initial Check:</strong> By 12:00 PM on practice day</li>
+      <li><strong>Final Decision Deadline:</strong>
+        <ul>
+          <li>Monday: no later than 4:00 PM</li>
+          <li>Friday: no later than 5:00 PM</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>🌤️ Evaluation Criteria</h3>
+    <ul>
+      <li>Active Tornado Warnings</li>
+      <li>Severe Thunderstorm Warnings (hail/wind risk)</li>
+      <li>Winter Storm, Ice Storm, or Flood Warnings</li>
+      <li>Snow ≥ 2&quot; in 24 hours</li>
+      <li>Ice ≥ 0.25&quot;</li>
+      <li>Rain Rate ≥ 0.5 in/hr</li>
+      <li>Wind ≥ 40 mph (gusts ≥ 55 mph)</li>
+      <li>Hail forecast or reports</li>
+      <li>Visibility ≤ 0.25 miles</li>
+      <li>Temperature ≤ 0 °F or ≥ 95 °F</li>
+      <li>Heat Index ≥ 100 °F</li>
+      <li>AQI ≥ 100 (Unhealthy for Sensitive Groups) or ≥ 150 (Unhealthy)</li>
+    </ul>
+
+    <h3>👤 Decision-Makers</h3>
+    <p>The <strong>Head Coach</strong> makes the decision. If unavailable, a <strong>Board Member</strong> (President or VP) will step in. All decisions should be shared in the board Slack thread.</p>
+
+    <h3>📣 Communication of Cancellation</h3>
+    <ul>
+      <li><strong>Deadline to Announce:</strong>
+        <ul>
+          <li>Monday: by 4:00 PM</li>
+          <li>Friday: by 5:00 PM</li>
+        </ul>
+      </li>
+      <li><strong>Announcer:</strong> Head Coach or assigned Board Member</li>
+      <li><strong>Channels:</strong>
+        <ul>
+          <li>#practice-attendance and #announcements Slack channels</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h4>📢 Sample Message</h4>
+    <blockquote>
+      🚨 <strong>Practice Cancelled Tonight</strong> 🚨<br>
+      Due to [brief reason], we are cancelling tonight’s practice (DATE).<br>
+      Stay safe — we’ll see you next time!<br>
+      — FRD Leadership
+    </blockquote>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h2>⚠️ Alerts & Recommendations</h2>
+      <div id="alerts">Loading...</div>
+    </div>
+    <div class="card" id="conditions-container">
+      <h2>🌡️ Current Weather</h2>
+      <div id="conditions">Loading current conditions...</div>
+    </div>
+  </div>
+
+  <h2>🌤️ 10-Day Forecast</h2>
+  <div id="forecast">Loading forecast...</div>
+
+  <h2>📡 Live Radar</h2>
+  <iframe
+    src="https://www.rainviewer.com/map.html?loc=39.4143,-77.4105,8&oFa=0&oC=0&oU=0&oCS=1&oF=1&oAP=0&c=3&o=83&lm=1&layer=radar&sm=1&sn=1"
+    title="Live Radar"
+  ></iframe>
+
+  <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
