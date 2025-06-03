@@ -65,11 +65,11 @@ async function loadWeatherAndPolicy() {
     `;
     document.getElementById('conditions').innerHTML = conditionsHTML;
 
-    // 6) Build 10-day daytime forecast
+    // 6) Build 5-day daytime forecast
     const forecastPeriods = forecastData.properties.periods;
     const daytimeForecasts = forecastPeriods
       .filter(p => p.isDaytime)
-      .slice(0, 10);
+      .slice(0, 5);
     const forecastContainer = document.getElementById('forecast');
     forecastContainer.innerHTML = daytimeForecasts
       .map(
@@ -109,11 +109,9 @@ async function loadWeatherAndPolicy() {
         card.addEventListener('click', () => {
           const anyExpanded = document.querySelector('.forecast-details');
           if (anyExpanded) {
-            // Collapse all
             document.querySelectorAll('.forecast-details').forEach(d => d.remove());
             return;
           }
-          // Expand every card
           document.querySelectorAll('.forecast-card').forEach(allCard => {
             const idx = parseInt(allCard.getAttribute('data-index'), 10);
             const period = daytimeForecasts[idx];
@@ -218,8 +216,8 @@ async function loadWeatherAndPolicy() {
       }
     }
 
-    // Future check next 5 daytime periods
-    const futureToCheck = daytimeForecasts.slice(1, 6);
+    // Future check next 4 daytime periods (to cover 5-day window)
+    const futureToCheck = daytimeForecasts.slice(1, 5);
     futureToCheck.forEach((period, i) => {
       const desc = period.detailedForecast || '';
       for (const rule of policy.rules) {
